@@ -136,21 +136,15 @@ int main(int argc, char* argv[])
         double *b = new double[n];
         for(int i=0; i<n; i++)
             cin>>a[i], b[i] = a[i];
-        //if(testcase >= 3)
-        //{
+
         start = clock();
         mysort::quick_sort(a, 0, n-1);
         endd = clock();
         if(check(a, n))
         cout<<"Time Quick Sort Runing: "<<double(endd - start)/CLOCKS_PER_SEC*1000<<"ms\n";
         else
-        {
-            cout<<"Sort error\n";
-            for (int i=0; i<min(100, n); i++)
-                cout<<a[i]<<" ";
-            cout<<"\n";
-        }
-        //}
+        cout<<"Sort error\n";
+
         for(int i=0; i<n; i++)
             a[i] = b[i];
         start = clock();
