@@ -120,17 +120,16 @@ bool check(double *arr, int numelement)
     return true;
 }
 
-int main()
+int main(int argc, char* argv[])
 {
     ios_base::sync_with_stdio(false);
     cin.tie(0);
-    freopen("10testcase.txt", "r", stdin);
     double start, endd;
     for(int testcase = 1; testcase <= 10; testcase ++)
     {
+        string const filename = "Test" + to_string(testcase);
+        freopen((filename + ".txt").c_str(), "r", stdin);
         cout<<"Test case: "<<testcase<<"\n";
-        int itest;
-        cin>>itest;
         int n;
         cin>>n;
         double *a = new double[n];
