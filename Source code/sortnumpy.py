@@ -11,14 +11,14 @@ def tictoc(func):
     return wrapper
 
 @tictoc
-def sortalgrthm(arraya, n, testcase):
+def sortalgrthm(arraya, n):
     arr = np.array(arraya)
     np.sort(arr)
 
-with open("10testcase.txt", "r") as file:
-    for i in range(10):
-        testcase = file.readline().strip()
-        print(f'test {testcase}')
+for i in range(1, 11):
+    filename = "Test" + str(i) + ".txt"
+    with open(filename, "r") as file:
+        print(f'test{i}')
         n = file.readline().strip()
         arraya = list(map(float, file.readline().strip().split(" ")))
-        sortalgrthm(arraya, n, testcase)
+        sortalgrthm(arraya, n)
